@@ -1,0 +1,15 @@
+{
+    "name": "milton/post-meta-with-react",
+    "autoload": {
+        "psr-4": {
+            "Milton\\App\\": "app"
+        }
+    },
+    "authors": [
+        {
+            "name": "Monjur Hasan Milton",
+            "email": "monjurhasan105142@gmail.com"
+        }
+    ],
+    "require": {}
+}

@@ -1,0 +1,801 @@
+# Copyright (C) 2024 Wp Dreamers
+# This file is distributed under the same license as the GbRegistration Page Popup plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: GbRegistration Page Popup 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/gb-registration-page-popup\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-10-27T13:59:30+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.10.0\n"
+"X-Domain: gb-registration-page-popup\n"
+
+#. Plugin Name of the plugin
+#: D:\gym-builder-plugin\app\public\wp-content\plugins\gb-registration-page-popup\gb-registration-page-popup.php
+msgid "GbRegistration Page Popup"
+msgstr ""
+
+#. Author of the plugin
+#: D:\gym-builder-plugin\app\public\wp-content\plugins\gb-registration-page-popup\gb-registration-page-popup.php
+msgid "Wp Dreamers"
+msgstr ""
+
+#: app/Controllers/Admin/Api.php:45
+msgid "You are not allowed to access this endpoint."
+msgstr ""
+
+#: app/Controllers/Admin/SubMenu.php:30
+#: app/Controllers/Admin/SubMenu.php:31
+msgid "Registration Page Popup"
+msgstr ""
+
+#: app/Controllers/AjaxController.php:83
+msgid "Settings Save Successfully."
+msgstr ""
+
+#: app/Controllers/AjaxController.php:123
+msgid "Invalid nonce"
+msgstr ""
+
+#: app/Controllers/AjaxController.php:131
+msgid "reCAPTCHA verification error."
+msgstr ""
+
+#: app/Controllers/AjaxController.php:145
+msgid "You have already registered."
+msgstr ""
+
+#: app/Controllers/AjaxController.php:214
+msgid "User name: "
+msgstr ""
+
+#: app/Controllers/AjaxController.php:214
+msgid "User phone number: "
+msgstr ""
+
+#: app/Controllers/AjaxController.php:216
+msgid "Hello Admin"
+msgstr ""
+
+#: app/Controllers/AjaxController.php:218
+msgid "Admin"
+msgstr ""
+
+#: app/Controllers/AjaxController.php:231
+msgid "Hello "
+msgstr ""
+
+#: app/Controllers/AjaxController.php:243
+msgid "Failed to registration."
+msgstr ""
+
+#: app/Controllers/AssetsControllers.php:155
+msgid "Full name is required."
+msgstr ""
+
+#: app/Controllers/AssetsControllers.php:156
+msgid "Email is required."
+msgstr ""
+
+#: app/Controllers/AssetsControllers.php:157
+msgid "Please enter a valid email address."
+msgstr ""
+
+#: app/Controllers/AssetsControllers.php:158
+msgid "Address is required."
+msgstr ""
+
+#: app/Controllers/AssetsControllers.php:159
+msgid "Phone number is required."
+msgstr ""
+
+#: app/Controllers/AssetsControllers.php:160
+msgid "Please enter a valid phone number."
+msgstr ""
+
+#: app/Controllers/AssetsControllers.php:161
+msgid "Joining date is required."
+msgstr ""
+
+#: app/Controllers/AssetsControllers.php:162
+msgid "Class is required."
+msgstr ""
+
+#: app/Controllers/AssetsControllers.php:163
+msgid "Please upload an image file."
+msgstr ""
+
+#: app/Controllers/AssetsControllers.php:164
+msgid "Only JPG and PNG files are allowed."
+msgstr ""
+
+#: app/Controllers/AssetsControllers.php:165
+msgid "Image size exceeds 2MB."
+msgstr ""
+
+#: app/Controllers/AssetsControllers.php:166
+msgid "Select a package name."
+msgstr ""
+
+#: app/Controllers/AssetsControllers.php:167
+msgid "Please fill the recaptcha."
+msgstr ""
+
+#: app/Controllers/Dependencies.php:35
+#: app/Controllers/Dependencies.php:46
+msgid "requires"
+msgstr ""
+
+#: app/Controllers/Dependencies.php:36
+#: app/Controllers/Dependencies.php:47
+msgid "Gym Builder"
+msgstr ""
+
+#: app/Controllers/Dependencies.php:37
+msgid "plugin to be active. Please activate Gym Builder to continue."
+msgstr ""
+
+#: app/Controllers/Dependencies.php:39
+msgid "Activate Gym Builder"
+msgstr ""
+
+#: app/Controllers/Dependencies.php:48
+msgid "plugin to be installed and activated. Please install Gym Builder to continue."
+msgstr ""
+
+#: app/Controllers/Dependencies.php:50
+msgid "Install Gym Builder"
+msgstr ""
+
+#: app/Controllers/Frontend/Shortcode.php:17
+msgid "Register Now"
+msgstr ""
+
+#: app/Helper/Fns.php:88
+msgid "Select a Course Package Name"
+msgstr ""
+
+#: templates/registration-page-popup/popup-layout-1.php:38
+#: templates/registration-page-popup/popup-layout-2.php:45
+#: templates/registration-page-popup/popup-layout-3.php:45
+msgid "Full Name"
+msgstr ""
+
+#: templates/registration-page-popup/popup-layout-1.php:39
+#: templates/registration-page-popup/popup-layout-2.php:46
+#: templates/registration-page-popup/popup-layout-3.php:46
+msgid "Enter your name"
+msgstr ""
+
+#: templates/registration-page-popup/popup-layout-1.php:43
+#: templates/registration-page-popup/popup-layout-2.php:50
+#: templates/registration-page-popup/popup-layout-3.php:50
+msgid "Email"
+msgstr ""
+
+#: templates/registration-page-popup/popup-layout-1.php:44
+#: templates/registration-page-popup/popup-layout-2.php:51
+#: templates/registration-page-popup/popup-layout-3.php:51
+msgid "Enter your email"
+msgstr ""
+
+#: templates/registration-page-popup/popup-layout-1.php:48
+#: templates/registration-page-popup/popup-layout-2.php:55
+#: templates/registration-page-popup/popup-layout-3.php:55
+msgid "Address"
+msgstr ""
+
+#: templates/registration-page-popup/popup-layout-1.php:49
+#: templates/registration-page-popup/popup-layout-2.php:56
+#: templates/registration-page-popup/popup-layout-3.php:56
+msgid "Enter your address"
+msgstr ""
+
+#: templates/registration-page-popup/popup-layout-1.php:53
+#: templates/registration-page-popup/popup-layout-2.php:60
+#: templates/registration-page-popup/popup-layout-3.php:60
+msgid "Phone Number"
+msgstr ""
+
+#: templates/registration-page-popup/popup-layout-1.php:54
+#: templates/registration-page-popup/popup-layout-2.php:61
+#: templates/registration-page-popup/popup-layout-3.php:61
+msgid "Enter your phone number"
+msgstr ""
+
+#: templates/registration-page-popup/popup-layout-1.php:58
+#: templates/registration-page-popup/popup-layout-2.php:65
+#: templates/registration-page-popup/popup-layout-3.php:65
+msgid "Age"
+msgstr ""
+
+#: templates/registration-page-popup/popup-layout-1.php:63
+#: templates/registration-page-popup/popup-layout-2.php:70
+#: templates/registration-page-popup/popup-layout-3.php:70
+msgid "Gender"
+msgstr ""
+
+#: templates/registration-page-popup/popup-layout-1.php:65
+#: templates/registration-page-popup/popup-layout-2.php:72
+#: templates/registration-page-popup/popup-layout-3.php:72
+msgid "Male"
+msgstr ""
+
+#: templates/registration-page-popup/popup-layout-1.php:66
+#: templates/registration-page-popup/popup-layout-2.php:73
+#: templates/registration-page-popup/popup-layout-3.php:73
+msgid "Female"
+msgstr ""
+
+#: templates/registration-page-popup/popup-layout-1.php:70
+#: templates/registration-page-popup/popup-layout-2.php:77
+#: templates/registration-page-popup/popup-layout-3.php:77
+msgid "Joining Date"
+msgstr ""
+
+#: templates/registration-page-popup/popup-layout-1.php:71
+#: templates/registration-page-popup/popup-layout-2.php:78
+#: templates/registration-page-popup/popup-layout-3.php:78
+msgid "Enter your joining date"
+msgstr ""
+
+#: templates/registration-page-popup/popup-layout-1.php:75
+#: templates/registration-page-popup/popup-layout-2.php:82
+#: templates/registration-page-popup/popup-layout-3.php:82
+msgid "Select Class"
+msgstr ""
+
+#: templates/registration-page-popup/popup-layout-1.php:89
+#: templates/registration-page-popup/popup-layout-2.php:96
+#: templates/registration-page-popup/popup-layout-3.php:96
+msgid "Select Course Pricing Package Name"
+msgstr ""
+
+#: templates/registration-page-popup/popup-layout-1.php:103
+#: templates/registration-page-popup/popup-layout-2.php:110
+#: templates/registration-page-popup/popup-layout-3.php:110
+msgid "Select Course Pricing Package List & Price"
+msgstr ""
+
+#: templates/registration-page-popup/popup-layout-1.php:116
+#: templates/registration-page-popup/popup-layout-2.php:123
+#: templates/registration-page-popup/popup-layout-3.php:123
+msgid "Profile Image (JPG/PNG, Max 2MB)"
+msgstr ""
+
+#: templates/registration-page-popup/popup-layout-2.php:31
+#: templates/registration-page-popup/popup-layout-3.php:31
+msgid "popup image"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:41922
+#: assets/admin/js/gb-registration-popup-admin.js:41928
+#: assets/admin/js/gb-registration-popup-admin.js:41975
+#: src/js/admin/App.jsx:38
+#: src/js/admin/App.jsx:44
+#: src/js/admin/App.jsx:79
+#: assets/admin/js/gb-registration-popup-admin.js:33085
+#: assets/admin/js/gb-registration-popup-admin.js:33091
+#: assets/admin/js/gb-registration-popup-admin.js:33126
+msgid "Error"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:41923
+#: src/js/admin/App.jsx:39
+#: assets/admin/js/gb-registration-popup-admin.js:33086
+msgid "Resource not found (404)."
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:41929
+#: src/js/admin/App.jsx:45
+#: assets/admin/js/gb-registration-popup-admin.js:33092
+msgid "Something is Wrong."
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:41969
+#: src/js/admin/App.jsx:73
+#: assets/admin/js/gb-registration-popup-admin.js:33120
+msgid "Success"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:41984
+#: src/js/admin/App.jsx:88
+#: assets/admin/js/gb-registration-popup-admin.js:33135
+msgid "An error occurred while save settings."
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:42034
+#: src/js/admin/App.jsx:141
+#: assets/admin/js/gb-registration-popup-admin.js:33188
+msgid "Save Settings"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:42184
+#: assets/admin/js/gb-registration-popup-admin.js:42544
+#: src/js/admin/components/GeneralSettings.jsx:27
+#: src/js/admin/components/MainHeader.jsx:33
+#: assets/admin/js/gb-registration-popup-admin.js:33265
+#: assets/admin/js/gb-registration-popup-admin.js:33579
+msgid "General Settings"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:42189
+#: src/js/admin/components/GeneralSettings.jsx:29
+#: assets/admin/js/gb-registration-popup-admin.js:33267
+msgid "Enable Registration"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:42212
+#: src/js/admin/components/GeneralSettings.jsx:51
+#: assets/admin/js/gb-registration-popup-admin.js:33289
+msgid "Popup Layout Style"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:42249
+#: src/js/admin/components/GeneralSettings.jsx:89
+#: assets/admin/js/gb-registration-popup-admin.js:33327
+msgid "Popup Overlay"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:42270
+#: src/js/admin/components/GeneralSettings.jsx:117
+#: assets/admin/js/gb-registration-popup-admin.js:33355
+msgid "Form Settings"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:42275
+#: src/js/admin/components/GeneralSettings.jsx:119
+#: assets/admin/js/gb-registration-popup-admin.js:33357
+msgid "Enable Form Title"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:42298
+#: src/js/admin/components/GeneralSettings.jsx:143
+#: assets/admin/js/gb-registration-popup-admin.js:33381
+msgid "Registration Form Title"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:42317
+#: src/js/admin/components/GeneralSettings.jsx:166
+#: assets/admin/js/gb-registration-popup-admin.js:33404
+msgid "This text will be used for member registration page form title"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:42324
+#: src/js/admin/components/GeneralSettings.jsx:173
+#: assets/admin/js/gb-registration-popup-admin.js:33411
+msgid "Button Text"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:42343
+#: src/js/admin/components/GeneralSettings.jsx:196
+#: assets/admin/js/gb-registration-popup-admin.js:33434
+msgid "This text will be used for member registration page form submit button text"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:42350
+#: src/js/admin/components/GeneralSettings.jsx:201
+#: assets/admin/js/gb-registration-popup-admin.js:33439
+msgid "Registration Confirmation Text"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:42369
+#: src/js/admin/components/GeneralSettings.jsx:224
+#: assets/admin/js/gb-registration-popup-admin.js:33462
+msgid "This text will be used for member registration page form confirmation text"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:42376
+#: src/js/admin/components/GeneralSettings.jsx:229
+#: assets/admin/js/gb-registration-popup-admin.js:33467
+msgid "Enable Discount Text"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:42399
+#: src/js/admin/components/GeneralSettings.jsx:253
+#: assets/admin/js/gb-registration-popup-admin.js:33491
+msgid "Discount Text"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:42418
+#: src/js/admin/components/GeneralSettings.jsx:276
+#: assets/admin/js/gb-registration-popup-admin.js:33514
+msgid "This text will be used for member registration page form discount text"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:42472
+#: src/js/admin/components/ImageSettings.jsx:16
+#: assets/admin/js/gb-registration-popup-admin.js:33540
+msgid "Image Settings"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:42551
+#: assets/admin/js/gb-registration-popup-admin.js:42776
+#: src/js/admin/components/MainHeader.jsx:39
+#: src/js/admin/components/PopupRecaptchaSettings.jsx:14
+#: assets/admin/js/gb-registration-popup-admin.js:33585
+#: assets/admin/js/gb-registration-popup-admin.js:33732
+msgid "reCAPTCHA Settings"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:42558
+#: assets/admin/js/gb-registration-popup-admin.js:42926
+#: src/js/admin/components/MainHeader.jsx:45
+#: src/js/admin/components/PopupSettings.jsx:15
+#: assets/admin/js/gb-registration-popup-admin.js:33591
+#: assets/admin/js/gb-registration-popup-admin.js:33838
+msgid "Popup Settings"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:42565
+#: src/js/admin/components/MainHeader.jsx:51
+#: assets/admin/js/gb-registration-popup-admin.js:33597
+msgid "Email Settings"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:42572
+#: src/js/admin/components/MainHeader.jsx:57
+#: assets/admin/js/gb-registration-popup-admin.js:33603
+msgid "Style Settings"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:42664
+#: src/js/admin/components/PopupEmailSettings.jsx:17
+#: assets/admin/js/gb-registration-popup-admin.js:33657
+msgid "Mail Settings"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:42669
+#: src/js/admin/components/PopupEmailSettings.jsx:19
+#: assets/admin/js/gb-registration-popup-admin.js:33659
+msgid "Admin Receiver Mail"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:42688
+#: src/js/admin/components/PopupEmailSettings.jsx:42
+#: assets/admin/js/gb-registration-popup-admin.js:33682
+msgid "After member registration process completed member details comes to this mail"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:42695
+#: src/js/admin/components/PopupEmailSettings.jsx:47
+#: assets/admin/js/gb-registration-popup-admin.js:33687
+msgid "Confirmation Message"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:42714
+#: src/js/admin/components/PopupEmailSettings.jsx:70
+#: assets/admin/js/gb-registration-popup-admin.js:33710
+msgid "This text is used for sending to the new users after registration completed"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:42781
+#: src/js/admin/components/PopupRecaptchaSettings.jsx:16
+#: assets/admin/js/gb-registration-popup-admin.js:33734
+msgid "Enable reCAPTCHA"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:42800
+#: src/js/admin/components/PopupRecaptchaSettings.jsx:36
+#: assets/admin/js/gb-registration-popup-admin.js:33754
+msgid "reCAPTCHA is a free service to protect your website from spam and abuse.To use reCAPTCHA, you need to install an API key pair. We have used reCAPTCHA v2."
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:42804
+#: src/js/admin/components/PopupRecaptchaSettings.jsx:39
+#: assets/admin/js/gb-registration-popup-admin.js:33757
+msgid "About reCAPTCHA"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:42811
+#: src/js/admin/components/PopupRecaptchaSettings.jsx:46
+#: assets/admin/js/gb-registration-popup-admin.js:33764
+msgid "Site Key"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:42830
+#: assets/admin/js/gb-registration-popup-admin.js:42856
+#: src/js/admin/components/PopupRecaptchaSettings.jsx:69
+#: src/js/admin/components/PopupRecaptchaSettings.jsx:97
+#: assets/admin/js/gb-registration-popup-admin.js:33787
+#: assets/admin/js/gb-registration-popup-admin.js:33815
+msgid "This text will be used for member registration recaptcha validation"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:42837
+#: src/js/admin/components/PopupRecaptchaSettings.jsx:74
+#: assets/admin/js/gb-registration-popup-admin.js:33792
+msgid "Secret Key"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:42931
+#: src/js/admin/components/PopupSettings.jsx:17
+#: assets/admin/js/gb-registration-popup-admin.js:33840
+msgid "Registration Page View"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:42950
+#: src/js/admin/components/PopupSettings.jsx:35
+#: assets/admin/js/gb-registration-popup-admin.js:33858
+msgid "Popup View"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:42953
+#: src/js/admin/components/PopupSettings.jsx:36
+#: assets/admin/js/gb-registration-popup-admin.js:33859
+msgid "Popup Button"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:42956
+#: src/js/admin/components/PopupSettings.jsx:37
+#: assets/admin/js/gb-registration-popup-admin.js:33860
+msgid "Separate Page"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:42961
+#: src/js/admin/components/PopupSettings.jsx:41
+#: assets/admin/js/gb-registration-popup-admin.js:33864
+msgid "You can display the registration form either as a popup or on a separate page or on a button."
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:42968
+#: src/js/admin/components/PopupSettings.jsx:49
+#: assets/admin/js/gb-registration-popup-admin.js:33872
+msgid "Registration Form Shortcode"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:42987
+#: src/js/admin/components/PopupSettings.jsx:72
+#: assets/admin/js/gb-registration-popup-admin.js:33895
+msgid "Popup Button Shortcode"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43006
+#: src/js/admin/components/PopupSettings.jsx:93
+#: assets/admin/js/gb-registration-popup-admin.js:33916
+msgid "Popup Button Text"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43025
+#: src/js/admin/components/PopupSettings.jsx:116
+#: assets/admin/js/gb-registration-popup-admin.js:33939
+msgid "You can change popup button text"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43033
+#: src/js/admin/components/PopupSettings.jsx:129
+#: assets/admin/js/gb-registration-popup-admin.js:33952
+msgid "Popup Animation"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43056
+#: src/js/admin/components/PopupSettings.jsx:155
+#: assets/admin/js/gb-registration-popup-admin.js:33978
+msgid "You can change popup button animation types"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43063
+#: src/js/admin/components/PopupSettings.jsx:160
+#: assets/admin/js/gb-registration-popup-admin.js:33983
+msgid "Popup Delay"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43082
+#: src/js/admin/components/PopupSettings.jsx:179
+#: assets/admin/js/gb-registration-popup-admin.js:34002
+msgid "Enter the popup showing delay in milliseconds."
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43090
+#: src/js/admin/components/PopupSettings.jsx:192
+#: assets/admin/js/gb-registration-popup-admin.js:34015
+msgid "Popup Width"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43112
+#: src/js/admin/components/PopupSettings.jsx:215
+#: assets/admin/js/gb-registration-popup-admin.js:34038
+msgid "you can set popup width"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43174
+#: src/js/admin/components/PopupStyleSettings.jsx:14
+#: assets/admin/js/gb-registration-popup-admin.js:34062
+msgid "Popup Style Settings"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43176
+#: src/js/admin/components/PopupStyleSettings.jsx:16
+#: assets/admin/js/gb-registration-popup-admin.js:34064
+msgid "Background Color"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43177
+#: src/js/admin/components/PopupStyleSettings.jsx:17
+#: assets/admin/js/gb-registration-popup-admin.js:34065
+msgid "This color is set for popup background color"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43181
+#: src/js/admin/components/PopupStyleSettings.jsx:22
+#: assets/admin/js/gb-registration-popup-admin.js:34070
+msgid "Form Title Color"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43182
+#: src/js/admin/components/PopupStyleSettings.jsx:23
+#: assets/admin/js/gb-registration-popup-admin.js:34071
+msgid "This color is set for popup form color"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43186
+#: src/js/admin/components/PopupStyleSettings.jsx:28
+#: assets/admin/js/gb-registration-popup-admin.js:34076
+msgid "Discount Text Color"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43187
+#: src/js/admin/components/PopupStyleSettings.jsx:29
+#: assets/admin/js/gb-registration-popup-admin.js:34077
+msgid "This color is set for popup form discount text color"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43191
+#: src/js/admin/components/PopupStyleSettings.jsx:34
+#: assets/admin/js/gb-registration-popup-admin.js:34082
+msgid "Form Label Color"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43192
+#: src/js/admin/components/PopupStyleSettings.jsx:35
+#: assets/admin/js/gb-registration-popup-admin.js:34083
+msgid "This color is set for popup form label color"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43196
+#: src/js/admin/components/PopupStyleSettings.jsx:40
+#: assets/admin/js/gb-registration-popup-admin.js:34088
+msgid "Form Text Color"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43197
+#: src/js/admin/components/PopupStyleSettings.jsx:41
+#: assets/admin/js/gb-registration-popup-admin.js:34089
+msgid "This color is set for popup form text color"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43201
+#: src/js/admin/components/PopupStyleSettings.jsx:46
+#: assets/admin/js/gb-registration-popup-admin.js:34094
+msgid "Form Input Border Color"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43202
+#: src/js/admin/components/PopupStyleSettings.jsx:47
+#: assets/admin/js/gb-registration-popup-admin.js:34095
+msgid "This color is set for popup form border color"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43206
+#: src/js/admin/components/PopupStyleSettings.jsx:52
+#: assets/admin/js/gb-registration-popup-admin.js:34100
+msgid "Button Background"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43207
+#: src/js/admin/components/PopupStyleSettings.jsx:53
+#: assets/admin/js/gb-registration-popup-admin.js:34101
+msgid "This color is set for popup form submit button background-color"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43211
+#: src/js/admin/components/PopupStyleSettings.jsx:58
+#: assets/admin/js/gb-registration-popup-admin.js:34106
+msgid "Button Color"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43212
+#: src/js/admin/components/PopupStyleSettings.jsx:59
+#: assets/admin/js/gb-registration-popup-admin.js:34107
+msgid "This color is set for popup form submit button color"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43216
+#: src/js/admin/components/PopupStyleSettings.jsx:64
+#: assets/admin/js/gb-registration-popup-admin.js:34112
+msgid "Button Hover Background"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43217
+#: src/js/admin/components/PopupStyleSettings.jsx:65
+#: assets/admin/js/gb-registration-popup-admin.js:34113
+msgid "This color is set for popup form submit button hover background-color"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43221
+#: src/js/admin/components/PopupStyleSettings.jsx:70
+#: assets/admin/js/gb-registration-popup-admin.js:34118
+msgid "Button Hover Color"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43222
+#: src/js/admin/components/PopupStyleSettings.jsx:71
+#: assets/admin/js/gb-registration-popup-admin.js:34119
+msgid "This color is set for popup form submit button hover color"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43229
+#: src/js/admin/components/PopupStyleSettings.jsx:76
+#: assets/admin/js/gb-registration-popup-admin.js:34124
+msgid "Form Input Field Height"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43251
+#: src/js/admin/components/PopupStyleSettings.jsx:99
+#: assets/admin/js/gb-registration-popup-admin.js:34147
+msgid "you can set form input field height"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43258
+#: src/js/admin/components/PopupStyleSettings.jsx:104
+#: assets/admin/js/gb-registration-popup-admin.js:34152
+msgid "Form Input Field Border Radius"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43280
+#: src/js/admin/components/PopupStyleSettings.jsx:127
+#: assets/admin/js/gb-registration-popup-admin.js:34175
+msgid "you can set form input field border radius"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43341
+#: src/js/admin/fields/FileUpload.jsx:14
+#: assets/admin/js/gb-registration-popup-admin.js:34197
+msgid "You can only upload JPG/PNG files!"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43346
+#: src/js/admin/fields/FileUpload.jsx:19
+#: assets/admin/js/gb-registration-popup-admin.js:34202
+msgid "Image must be smaller than 2MB!"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43353
+#: src/js/admin/fields/FileUpload.jsx:27
+#: assets/admin/js/gb-registration-popup-admin.js:34210
+msgid "WordPress media library is not available."
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43357
+#: src/js/admin/fields/FileUpload.jsx:32
+#: assets/admin/js/gb-registration-popup-admin.js:34215
+msgid "Select or Upload Media"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43359
+#: src/js/admin/fields/FileUpload.jsx:34
+#: assets/admin/js/gb-registration-popup-admin.js:34217
+msgid "Upload"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43435
+#: src/js/admin/fields/FileUpload.jsx:112
+#: assets/admin/js/gb-registration-popup-admin.js:34295
+msgid "Are you sure you want to delete this image?"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43437
+#: src/js/admin/fields/FileUpload.jsx:114
+#: assets/admin/js/gb-registration-popup-admin.js:34297
+msgid "Yes"
+msgstr ""
+
+#: assets/admin/js/gb-registration-popup-admin.js:43438
+#: src/js/admin/fields/FileUpload.jsx:115
+#: assets/admin/js/gb-registration-popup-admin.js:34298
+msgid "No"
+msgstr ""
