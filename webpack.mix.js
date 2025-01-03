@@ -27,7 +27,6 @@ if (process.env.npm_config_package) {
         let includes = [
             "app",
             "assets",
-            "templates",
             "languages",
             "vendor",
             "index.php",

@@ -89,7 +89,7 @@ _ext_**
 .fleet
 *.txt
 !todo.txt
-languages/gym-builder.pot
+languages/post-meta-with-react.pot
 
 
 /vendor/
