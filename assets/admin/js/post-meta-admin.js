@@ -14387,6 +14387,645 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/antd/es/checkbox/Checkbox.js":
+/*!***************************************************!*\
+  !*** ./node_modules/antd/es/checkbox/Checkbox.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var rc_checkbox__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rc-checkbox */ "./node_modules/rc-checkbox/es/index.js");
+/* harmony import */ var rc_util_es_ref__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rc-util/es/ref */ "./node_modules/rc-util/es/ref.js");
+/* harmony import */ var _util_warning__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../_util/warning */ "./node_modules/antd/es/_util/warning.js");
+/* harmony import */ var _util_wave__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../_util/wave */ "./node_modules/antd/es/_util/wave/index.js");
+/* harmony import */ var _util_wave_interface__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../_util/wave/interface */ "./node_modules/antd/es/_util/wave/interface.js");
+/* harmony import */ var _config_provider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../config-provider */ "./node_modules/antd/es/config-provider/context.js");
+/* harmony import */ var _config_provider_DisabledContext__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../config-provider/DisabledContext */ "./node_modules/antd/es/config-provider/DisabledContext.js");
+/* harmony import */ var _config_provider_hooks_useCSSVarCls__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../config-provider/hooks/useCSSVarCls */ "./node_modules/antd/es/config-provider/hooks/useCSSVarCls.js");
+/* harmony import */ var _form_context__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../form/context */ "./node_modules/antd/es/form/context.js");
+/* harmony import */ var _GroupContext__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./GroupContext */ "./node_modules/antd/es/checkbox/GroupContext.js");
+/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./style */ "./node_modules/antd/es/checkbox/style/index.js");
+/* harmony import */ var _useBubbleLock__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./useBubbleLock */ "./node_modules/antd/es/checkbox/useBubbleLock.js");
+"use client";
+
+var __rest = undefined && undefined.__rest || function (s, e) {
+  var t = {};
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
+  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
+  }
+  return t;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const InternalCheckbox = (props, ref) => {
+  var _a;
+  const {
+      prefixCls: customizePrefixCls,
+      className,
+      rootClassName,
+      children,
+      indeterminate = false,
+      style,
+      onMouseEnter,
+      onMouseLeave,
+      skipGroup = false,
+      disabled
+    } = props,
+    restProps = __rest(props, ["prefixCls", "className", "rootClassName", "children", "indeterminate", "style", "onMouseEnter", "onMouseLeave", "skipGroup", "disabled"]);
+  const {
+    getPrefixCls,
+    direction,
+    checkbox
+  } = react__WEBPACK_IMPORTED_MODULE_0__.useContext(_config_provider__WEBPACK_IMPORTED_MODULE_4__.ConfigContext);
+  const checkboxGroup = react__WEBPACK_IMPORTED_MODULE_0__.useContext(_GroupContext__WEBPACK_IMPORTED_MODULE_5__["default"]);
+  const {
+    isFormItemInput
+  } = react__WEBPACK_IMPORTED_MODULE_0__.useContext(_form_context__WEBPACK_IMPORTED_MODULE_6__.FormItemInputContext);
+  const contextDisabled = react__WEBPACK_IMPORTED_MODULE_0__.useContext(_config_provider_DisabledContext__WEBPACK_IMPORTED_MODULE_7__["default"]);
+  const mergedDisabled = (_a = (checkboxGroup === null || checkboxGroup === void 0 ? void 0 : checkboxGroup.disabled) || disabled) !== null && _a !== void 0 ? _a : contextDisabled;
+  const prevValue = react__WEBPACK_IMPORTED_MODULE_0__.useRef(restProps.value);
+  const checkboxRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef(null);
+  const mergedRef = (0,rc_util_es_ref__WEBPACK_IMPORTED_MODULE_3__.composeRef)(ref, checkboxRef);
+  if (true) {
+    const warning = (0,_util_warning__WEBPACK_IMPORTED_MODULE_8__.devUseWarning)('Checkbox');
+     true ? warning('checked' in restProps || !!checkboxGroup || !('value' in restProps), 'usage', '`value` is not a valid prop, do you mean `checked`?') : 0;
+  }
+  react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => {
+    checkboxGroup === null || checkboxGroup === void 0 ? void 0 : checkboxGroup.registerValue(restProps.value);
+  }, []);
+  react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => {
+    if (skipGroup) {
+      return;
+    }
+    if (restProps.value !== prevValue.current) {
+      checkboxGroup === null || checkboxGroup === void 0 ? void 0 : checkboxGroup.cancelValue(prevValue.current);
+      checkboxGroup === null || checkboxGroup === void 0 ? void 0 : checkboxGroup.registerValue(restProps.value);
+      prevValue.current = restProps.value;
+    }
+    return () => checkboxGroup === null || checkboxGroup === void 0 ? void 0 : checkboxGroup.cancelValue(restProps.value);
+  }, [restProps.value]);
+  react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => {
+    var _a;
+    if ((_a = checkboxRef.current) === null || _a === void 0 ? void 0 : _a.input) {
+      checkboxRef.current.input.indeterminate = indeterminate;
+    }
+  }, [indeterminate]);
+  const prefixCls = getPrefixCls('checkbox', customizePrefixCls);
+  const rootCls = (0,_config_provider_hooks_useCSSVarCls__WEBPACK_IMPORTED_MODULE_9__["default"])(prefixCls);
+  const [wrapCSSVar, hashId, cssVarCls] = (0,_style__WEBPACK_IMPORTED_MODULE_10__["default"])(prefixCls, rootCls);
+  const checkboxProps = Object.assign({}, restProps);
+  if (checkboxGroup && !skipGroup) {
+    checkboxProps.onChange = function () {
+      if (restProps.onChange) {
+        restProps.onChange.apply(restProps, arguments);
+      }
+      if (checkboxGroup.toggleOption) {
+        checkboxGroup.toggleOption({
+          label: children,
+          value: restProps.value
+        });
+      }
+    };
+    checkboxProps.name = checkboxGroup.name;
+    checkboxProps.checked = checkboxGroup.value.includes(restProps.value);
+  }
+  const classString = classnames__WEBPACK_IMPORTED_MODULE_1___default()(`${prefixCls}-wrapper`, {
+    [`${prefixCls}-rtl`]: direction === 'rtl',
+    [`${prefixCls}-wrapper-checked`]: checkboxProps.checked,
+    [`${prefixCls}-wrapper-disabled`]: mergedDisabled,
+    [`${prefixCls}-wrapper-in-form-item`]: isFormItemInput
+  }, checkbox === null || checkbox === void 0 ? void 0 : checkbox.className, className, rootClassName, cssVarCls, rootCls, hashId);
+  const checkboxClass = classnames__WEBPACK_IMPORTED_MODULE_1___default()({
+    [`${prefixCls}-indeterminate`]: indeterminate
+  }, _util_wave_interface__WEBPACK_IMPORTED_MODULE_11__.TARGET_CLS, hashId);
+  // ============================ Event Lock ============================
+  const [onLabelClick, onInputClick] = (0,_useBubbleLock__WEBPACK_IMPORTED_MODULE_12__["default"])(checkboxProps.onClick);
+  // ============================== Render ==============================
+  return wrapCSSVar(/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_util_wave__WEBPACK_IMPORTED_MODULE_13__["default"], {
+    component: "Checkbox",
+    disabled: mergedDisabled
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+    className: classString,
+    style: Object.assign(Object.assign({}, checkbox === null || checkbox === void 0 ? void 0 : checkbox.style), style),
+    onMouseEnter: onMouseEnter,
+    onMouseLeave: onMouseLeave,
+    onClick: onLabelClick
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(rc_checkbox__WEBPACK_IMPORTED_MODULE_2__["default"], Object.assign({}, checkboxProps, {
+    onClick: onInputClick,
+    prefixCls: prefixCls,
+    className: checkboxClass,
+    disabled: mergedDisabled,
+    ref: mergedRef
+  })), children !== undefined && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, children))));
+};
+const Checkbox = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(InternalCheckbox);
+if (true) {
+  Checkbox.displayName = 'Checkbox';
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Checkbox);
+
+/***/ }),
+
+/***/ "./node_modules/antd/es/checkbox/Group.js":
+/*!************************************************!*\
+  !*** ./node_modules/antd/es/checkbox/Group.js ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   GroupContext: () => (/* reexport safe */ _GroupContext__WEBPACK_IMPORTED_MODULE_8__["default"]),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var rc_util_es_omit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rc-util/es/omit */ "./node_modules/rc-util/es/omit.js");
+/* harmony import */ var _config_provider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../config-provider */ "./node_modules/antd/es/config-provider/context.js");
+/* harmony import */ var _config_provider_hooks_useCSSVarCls__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../config-provider/hooks/useCSSVarCls */ "./node_modules/antd/es/config-provider/hooks/useCSSVarCls.js");
+/* harmony import */ var _Checkbox__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Checkbox */ "./node_modules/antd/es/checkbox/Checkbox.js");
+/* harmony import */ var _GroupContext__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./GroupContext */ "./node_modules/antd/es/checkbox/GroupContext.js");
+/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./style */ "./node_modules/antd/es/checkbox/style/index.js");
+"use client";
+
+
+var __rest = undefined && undefined.__rest || function (s, e) {
+  var t = {};
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
+  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
+  }
+  return t;
+};
+
+
+
+
+
+
+
+
+const CheckboxGroup = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.forwardRef((props, ref) => {
+  const {
+      defaultValue,
+      children,
+      options = [],
+      prefixCls: customizePrefixCls,
+      className,
+      rootClassName,
+      style,
+      onChange
+    } = props,
+    restProps = __rest(props, ["defaultValue", "children", "options", "prefixCls", "className", "rootClassName", "style", "onChange"]);
+  const {
+    getPrefixCls,
+    direction
+  } = react__WEBPACK_IMPORTED_MODULE_1__.useContext(_config_provider__WEBPACK_IMPORTED_MODULE_4__.ConfigContext);
+  const [value, setValue] = react__WEBPACK_IMPORTED_MODULE_1__.useState(restProps.value || defaultValue || []);
+  const [registeredValues, setRegisteredValues] = react__WEBPACK_IMPORTED_MODULE_1__.useState([]);
+  react__WEBPACK_IMPORTED_MODULE_1__.useEffect(() => {
+    if ('value' in restProps) {
+      setValue(restProps.value || []);
+    }
+  }, [restProps.value]);
+  const memoOptions = react__WEBPACK_IMPORTED_MODULE_1__.useMemo(() => options.map(option => {
+    if (typeof option === 'string' || typeof option === 'number') {
+      return {
+        label: option,
+        value: option
+      };
+    }
+    return option;
+  }), [options]);
+  const cancelValue = val => {
+    setRegisteredValues(prevValues => prevValues.filter(v => v !== val));
+  };
+  const registerValue = val => {
+    setRegisteredValues(prevValues => [].concat((0,_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(prevValues), [val]));
+  };
+  const toggleOption = option => {
+    const optionIndex = value.indexOf(option.value);
+    const newValue = (0,_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(value);
+    if (optionIndex === -1) {
+      newValue.push(option.value);
+    } else {
+      newValue.splice(optionIndex, 1);
+    }
+    if (!('value' in restProps)) {
+      setValue(newValue);
+    }
+    onChange === null || onChange === void 0 ? void 0 : onChange(newValue.filter(val => registeredValues.includes(val)).sort((a, b) => {
+      const indexA = memoOptions.findIndex(opt => opt.value === a);
+      const indexB = memoOptions.findIndex(opt => opt.value === b);
+      return indexA - indexB;
+    }));
+  };
+  const prefixCls = getPrefixCls('checkbox', customizePrefixCls);
+  const groupPrefixCls = `${prefixCls}-group`;
+  const rootCls = (0,_config_provider_hooks_useCSSVarCls__WEBPACK_IMPORTED_MODULE_5__["default"])(prefixCls);
+  const [wrapCSSVar, hashId, cssVarCls] = (0,_style__WEBPACK_IMPORTED_MODULE_6__["default"])(prefixCls, rootCls);
+  const domProps = (0,rc_util_es_omit__WEBPACK_IMPORTED_MODULE_3__["default"])(restProps, ['value', 'disabled']);
+  const childrenNode = options.length ? memoOptions.map(option => (/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_Checkbox__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    prefixCls: prefixCls,
+    key: option.value.toString(),
+    disabled: 'disabled' in option ? option.disabled : restProps.disabled,
+    value: option.value,
+    checked: value.includes(option.value),
+    onChange: option.onChange,
+    className: `${groupPrefixCls}-item`,
+    style: option.style,
+    title: option.title,
+    id: option.id,
+    required: option.required
+  }, option.label))) : children;
+  const context = {
+    toggleOption,
+    value,
+    disabled: restProps.disabled,
+    name: restProps.name,
+    // https://github.com/ant-design/ant-design/issues/16376
+    registerValue,
+    cancelValue
+  };
+  const classString = classnames__WEBPACK_IMPORTED_MODULE_2___default()(groupPrefixCls, {
+    [`${groupPrefixCls}-rtl`]: direction === 'rtl'
+  }, className, rootClassName, cssVarCls, rootCls, hashId);
+  return wrapCSSVar(/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", Object.assign({
+    className: classString,
+    style: style
+  }, domProps, {
+    ref: ref
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_GroupContext__WEBPACK_IMPORTED_MODULE_8__["default"].Provider, {
+    value: context
+  }, childrenNode)));
+});
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CheckboxGroup);
+
+/***/ }),
+
+/***/ "./node_modules/antd/es/checkbox/GroupContext.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/antd/es/checkbox/GroupContext.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+const GroupContext = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createContext(null);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (GroupContext);
+
+/***/ }),
+
+/***/ "./node_modules/antd/es/checkbox/index.js":
+/*!************************************************!*\
+  !*** ./node_modules/antd/es/checkbox/index.js ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Checkbox__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Checkbox */ "./node_modules/antd/es/checkbox/Checkbox.js");
+/* harmony import */ var _Group__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Group */ "./node_modules/antd/es/checkbox/Group.js");
+"use client";
+
+
+
+const Checkbox = _Checkbox__WEBPACK_IMPORTED_MODULE_0__["default"];
+Checkbox.Group = _Group__WEBPACK_IMPORTED_MODULE_1__["default"];
+Checkbox.__ANT_CHECKBOX = true;
+if (true) {
+  Checkbox.displayName = 'Checkbox';
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Checkbox);
+
+/***/ }),
+
+/***/ "./node_modules/antd/es/checkbox/style/index.js":
+/*!******************************************************!*\
+  !*** ./node_modules/antd/es/checkbox/style/index.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   genCheckboxStyle: () => (/* binding */ genCheckboxStyle),
+/* harmony export */   getStyle: () => (/* binding */ getStyle)
+/* harmony export */ });
+/* harmony import */ var _ant_design_cssinjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ant-design/cssinjs */ "./node_modules/@ant-design/cssinjs/es/index.js");
+/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../style */ "./node_modules/antd/es/style/index.js");
+/* harmony import */ var _theme_internal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../theme/internal */ "./node_modules/@ant-design/cssinjs-utils/es/index.js");
+/* harmony import */ var _theme_internal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../theme/internal */ "./node_modules/antd/es/theme/util/genStyleUtils.js");
+
+
+
+// ============================== Styles ==============================
+const genCheckboxStyle = token => {
+  const {
+    checkboxCls
+  } = token;
+  const wrapperCls = `${checkboxCls}-wrapper`;
+  return [
+  // ===================== Basic =====================
+  {
+    // Group
+    [`${checkboxCls}-group`]: Object.assign(Object.assign({}, (0,_style__WEBPACK_IMPORTED_MODULE_1__.resetComponent)(token)), {
+      display: 'inline-flex',
+      flexWrap: 'wrap',
+      columnGap: token.marginXS,
+      // Group > Grid
+      [`> ${token.antCls}-row`]: {
+        flex: 1
+      }
+    }),
+    // Wrapper
+    [wrapperCls]: Object.assign(Object.assign({}, (0,_style__WEBPACK_IMPORTED_MODULE_1__.resetComponent)(token)), {
+      display: 'inline-flex',
+      alignItems: 'baseline',
+      cursor: 'pointer',
+      // Fix checkbox & radio in flex align #30260
+      '&:after': {
+        display: 'inline-block',
+        width: 0,
+        overflow: 'hidden',
+        content: "'\\a0'"
+      },
+      // Checkbox near checkbox
+      [`& + ${wrapperCls}`]: {
+        marginInlineStart: 0
+      },
+      [`&${wrapperCls}-in-form-item`]: {
+        'input[type="checkbox"]': {
+          width: 14,
+          // FIXME: magic
+          height: 14 // FIXME: magic
+        }
+      }
+    }),
+    // Wrapper > Checkbox
+    [checkboxCls]: Object.assign(Object.assign({}, (0,_style__WEBPACK_IMPORTED_MODULE_1__.resetComponent)(token)), {
+      position: 'relative',
+      whiteSpace: 'nowrap',
+      lineHeight: 1,
+      cursor: 'pointer',
+      borderRadius: token.borderRadiusSM,
+      // To make alignment right when `controlHeight` is changed
+      // Ref: https://github.com/ant-design/ant-design/issues/41564
+      alignSelf: 'center',
+      // Wrapper > Checkbox > input
+      [`${checkboxCls}-input`]: {
+        position: 'absolute',
+        // Since baseline align will get additional space offset,
+        // we need to move input to top to make it align with text.
+        // Ref: https://github.com/ant-design/ant-design/issues/38926#issuecomment-1486137799
+        inset: 0,
+        zIndex: 1,
+        cursor: 'pointer',
+        opacity: 0,
+        margin: 0,
+        [`&:focus-visible + ${checkboxCls}-inner`]: Object.assign({}, (0,_style__WEBPACK_IMPORTED_MODULE_1__.genFocusOutline)(token))
+      },
+      // Wrapper > Checkbox > inner
+      [`${checkboxCls}-inner`]: {
+        boxSizing: 'border-box',
+        display: 'block',
+        width: token.checkboxSize,
+        height: token.checkboxSize,
+        direction: 'ltr',
+        backgroundColor: token.colorBgContainer,
+        border: `${(0,_ant_design_cssinjs__WEBPACK_IMPORTED_MODULE_0__.unit)(token.lineWidth)} ${token.lineType} ${token.colorBorder}`,
+        borderRadius: token.borderRadiusSM,
+        borderCollapse: 'separate',
+        transition: `all ${token.motionDurationSlow}`,
+        '&:after': {
+          boxSizing: 'border-box',
+          position: 'absolute',
+          top: '50%',
+          insetInlineStart: '25%',
+          display: 'table',
+          width: token.calc(token.checkboxSize).div(14).mul(5).equal(),
+          height: token.calc(token.checkboxSize).div(14).mul(8).equal(),
+          border: `${(0,_ant_design_cssinjs__WEBPACK_IMPORTED_MODULE_0__.unit)(token.lineWidthBold)} solid ${token.colorWhite}`,
+          borderTop: 0,
+          borderInlineStart: 0,
+          transform: 'rotate(45deg) scale(0) translate(-50%,-50%)',
+          opacity: 0,
+          content: '""',
+          transition: `all ${token.motionDurationFast} ${token.motionEaseInBack}, opacity ${token.motionDurationFast}`
+        }
+      },
+      // Wrapper > Checkbox + Text
+      '& + span': {
+        paddingInlineStart: token.paddingXS,
+        paddingInlineEnd: token.paddingXS
+      }
+    })
+  },
+  // ===================== Hover =====================
+  {
+    // Wrapper & Wrapper > Checkbox
+    [`
+        ${wrapperCls}:not(${wrapperCls}-disabled),
+        ${checkboxCls}:not(${checkboxCls}-disabled)
+      `]: {
+      [`&:hover ${checkboxCls}-inner`]: {
+        borderColor: token.colorPrimary
+      }
+    },
+    [`${wrapperCls}:not(${wrapperCls}-disabled)`]: {
+      [`&:hover ${checkboxCls}-checked:not(${checkboxCls}-disabled) ${checkboxCls}-inner`]: {
+        backgroundColor: token.colorPrimaryHover,
+        borderColor: 'transparent'
+      },
+      [`&:hover ${checkboxCls}-checked:not(${checkboxCls}-disabled):after`]: {
+        borderColor: token.colorPrimaryHover
+      }
+    }
+  },
+  // ==================== Checked ====================
+  {
+    // Wrapper > Checkbox
+    [`${checkboxCls}-checked`]: {
+      [`${checkboxCls}-inner`]: {
+        backgroundColor: token.colorPrimary,
+        borderColor: token.colorPrimary,
+        '&:after': {
+          opacity: 1,
+          transform: 'rotate(45deg) scale(1) translate(-50%,-50%)',
+          transition: `all ${token.motionDurationMid} ${token.motionEaseOutBack} ${token.motionDurationFast}`
+        }
+      }
+    },
+    [`
+        ${wrapperCls}-checked:not(${wrapperCls}-disabled),
+        ${checkboxCls}-checked:not(${checkboxCls}-disabled)
+      `]: {
+      [`&:hover ${checkboxCls}-inner`]: {
+        backgroundColor: token.colorPrimaryHover,
+        borderColor: 'transparent'
+      }
+    }
+  },
+  // ================= Indeterminate =================
+  {
+    [checkboxCls]: {
+      '&-indeterminate': {
+        // Wrapper > Checkbox > inner
+        [`${checkboxCls}-inner`]: {
+          backgroundColor: `${token.colorBgContainer} !important`,
+          borderColor: `${token.colorBorder} !important`,
+          '&:after': {
+            top: '50%',
+            insetInlineStart: '50%',
+            width: token.calc(token.fontSizeLG).div(2).equal(),
+            height: token.calc(token.fontSizeLG).div(2).equal(),
+            backgroundColor: token.colorPrimary,
+            border: 0,
+            transform: 'translate(-50%, -50%) scale(1)',
+            opacity: 1,
+            content: '""'
+          }
+        },
+        // https://github.com/ant-design/ant-design/issues/50074
+        [`&:hover ${checkboxCls}-inner`]: {
+          backgroundColor: `${token.colorBgContainer} !important`,
+          borderColor: `${token.colorPrimary} !important`
+        }
+      }
+    }
+  },
+  // ==================== Disable ====================
+  {
+    // Wrapper
+    [`${wrapperCls}-disabled`]: {
+      cursor: 'not-allowed'
+    },
+    // Wrapper > Checkbox
+    [`${checkboxCls}-disabled`]: {
+      // Wrapper > Checkbox > input
+      [`&, ${checkboxCls}-input`]: {
+        cursor: 'not-allowed',
+        // Disabled for native input to enable Tooltip event handler
+        // ref: https://github.com/ant-design/ant-design/issues/39822#issuecomment-1365075901
+        pointerEvents: 'none'
+      },
+      // Wrapper > Checkbox > inner
+      [`${checkboxCls}-inner`]: {
+        background: token.colorBgContainerDisabled,
+        borderColor: token.colorBorder,
+        '&:after': {
+          borderColor: token.colorTextDisabled
+        }
+      },
+      '&:after': {
+        display: 'none'
+      },
+      '& + span': {
+        color: token.colorTextDisabled
+      },
+      [`&${checkboxCls}-indeterminate ${checkboxCls}-inner::after`]: {
+        background: token.colorTextDisabled
+      }
+    }
+  }];
+};
+// ============================== Export ==============================
+function getStyle(prefixCls, token) {
+  const checkboxToken = (0,_theme_internal__WEBPACK_IMPORTED_MODULE_2__.mergeToken)(token, {
+    checkboxCls: `.${prefixCls}`,
+    checkboxSize: token.controlInteractiveSize
+  });
+  return [genCheckboxStyle(checkboxToken)];
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_theme_internal__WEBPACK_IMPORTED_MODULE_3__.genStyleHooks)('Checkbox', (token, _ref) => {
+  let {
+    prefixCls
+  } = _ref;
+  return [getStyle(prefixCls, token)];
+}));
+
+/***/ }),
+
+/***/ "./node_modules/antd/es/checkbox/useBubbleLock.js":
+/*!********************************************************!*\
+  !*** ./node_modules/antd/es/checkbox/useBubbleLock.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ useBubbleLock)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var rc_util_es_raf__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rc-util/es/raf */ "./node_modules/rc-util/es/raf.js");
+
+
+/**
+ * When click on the label,
+ * the event will be stopped to prevent the label from being clicked twice.
+ * label click -> input click -> label click again
+ */
+function useBubbleLock(onOriginInputClick) {
+  const labelClickLockRef = react__WEBPACK_IMPORTED_MODULE_0___default().useRef(null);
+  const clearLock = () => {
+    rc_util_es_raf__WEBPACK_IMPORTED_MODULE_1__["default"].cancel(labelClickLockRef.current);
+    labelClickLockRef.current = null;
+  };
+  const onLabelClick = () => {
+    clearLock();
+    labelClickLockRef.current = (0,rc_util_es_raf__WEBPACK_IMPORTED_MODULE_1__["default"])(() => {
+      labelClickLockRef.current = null;
+    });
+  };
+  const onInputClick = e => {
+    if (labelClickLockRef.current) {
+      e.stopPropagation();
+      clearLock();
+    }
+    onOriginInputClick === null || onOriginInputClick === void 0 ? void 0 : onOriginInputClick(e);
+  };
+  return [onLabelClick, onInputClick];
+}
+
+/***/ }),
+
 /***/ "./node_modules/antd/es/collapse/Collapse.js":
 /*!***************************************************!*\
   !*** ./node_modules/antd/es/collapse/Collapse.js ***!
@@ -23843,7 +24482,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _TextInputField__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TextInputField */ "./src/js/admin/components/TextInputField.jsx");
 /* harmony import */ var _RepeaterField__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./RepeaterField */ "./src/js/admin/components/RepeaterField.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _DoctorSchedule__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./DoctorSchedule */ "./src/js/admin/components/DoctorSchedule.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread(); }
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _iterableToArray(r) { if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r); }
@@ -23854,6 +24494,7 @@ function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) 
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
 
 
 
@@ -23872,6 +24513,11 @@ var App = function App() {
     _useState6 = _slicedToArray(_useState5, 2),
     repeaterFields = _useState6[0],
     setRepeaterFields = _useState6[1];
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(pmwrParams.metaFields.schedule || []),
+    _useState8 = _slicedToArray(_useState7, 2),
+    schedule = _useState8[0],
+    setSchedule = _useState8[1];
+  var clinics = pmwrParams.clinics || [];
   // Add a new repeater row
   var addField = function addField() {
     setRepeaterFields([].concat(_toConsumableArray(repeaterFields), [{
@@ -23893,34 +24539,178 @@ var App = function App() {
     updatedFields[index][key] = value;
     setRepeaterFields(updatedFields);
   };
-  console.log(pmwrParams);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_TextInputField__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_TextInputField__WEBPACK_IMPORTED_MODULE_1__["default"], {
       label: "Simple Field One",
       value: simpleFieldOne,
       onChange: function onChange(e) {
         return setSimpleFieldOne(e.target.value);
       },
       name: "simple_field_one"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_TextInputField__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_TextInputField__WEBPACK_IMPORTED_MODULE_1__["default"], {
       label: "Simple Field Two",
       value: simpleFieldTwo,
       onChange: function onChange(e) {
         return setSimpleFieldTwo(e.target.value);
       },
       name: "simple_field_two"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
       children: "Repeater Fields"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_RepeaterField__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_RepeaterField__WEBPACK_IMPORTED_MODULE_2__["default"], {
       fields: repeaterFields,
       onAdd: addField,
       onRemove: removeField,
       onUpdate: updateField,
       name: "repeater_data"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_DoctorSchedule__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      schedule: schedule,
+      setSchedule: setSchedule,
+      clinics: clinics
     })]
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
+
+/***/ }),
+
+/***/ "./src/js/admin/components/DoctorSchedule.jsx":
+/*!****************************************************!*\
+  !*** ./src/js/admin/components/DoctorSchedule.jsx ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! antd */ "./node_modules/antd/es/checkbox/index.js");
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! antd */ "./node_modules/antd/es/space/index.js");
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! antd */ "./node_modules/antd/es/input/index.js");
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! antd */ "./node_modules/antd/es/button/index.js");
+/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ant-design/icons */ "./node_modules/@ant-design/icons/es/icons/DeleteOutlined.js");
+/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ant-design/icons */ "./node_modules/@ant-design/icons/es/icons/PlusOutlined.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _iterableToArray(r) { if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r); }
+function _arrayWithoutHoles(r) { if (Array.isArray(r)) return _arrayLikeToArray(r); }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+
+
+
+
+var weekDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+var DoctorSchedule = function DoctorSchedule(_ref) {
+  var schedule = _ref.schedule,
+    setSchedule = _ref.setSchedule,
+    clinics = _ref.clinics;
+  // Toggle availability for a weekday
+  var toggleAvailability = function toggleAvailability(dayIndex) {
+    var updatedSchedule = _toConsumableArray(schedule);
+    if (!updatedSchedule[dayIndex]) {
+      updatedSchedule[dayIndex] = {
+        available: false,
+        clinics: {}
+      };
+    }
+    updatedSchedule[dayIndex].available = !updatedSchedule[dayIndex].available;
+    setSchedule(updatedSchedule);
+  };
+
+  // Add a new timing for a clinic
+  var addTiming = function addTiming(dayIndex, clinicId) {
+    var updatedSchedule = _toConsumableArray(schedule);
+    if (!updatedSchedule[dayIndex]) {
+      updatedSchedule[dayIndex] = {
+        available: false,
+        clinics: {}
+      };
+    }
+    if (!updatedSchedule[dayIndex].clinics[clinicId]) {
+      updatedSchedule[dayIndex].clinics[clinicId] = [];
+    }
+    updatedSchedule[dayIndex].clinics[clinicId].push('');
+    setSchedule(updatedSchedule);
+  };
+
+  // Update a timing for a clinic
+  var updateTiming = function updateTiming(dayIndex, clinicId, timingIndex, value) {
+    var updatedSchedule = _toConsumableArray(schedule);
+    updatedSchedule[dayIndex].clinics[clinicId][timingIndex] = value;
+    setSchedule(updatedSchedule);
+  };
+
+  // Remove a timing for a clinic
+  var removeTiming = function removeTiming(dayIndex, clinicId, timingIndex) {
+    var updatedSchedule = _toConsumableArray(schedule);
+    updatedSchedule[dayIndex].clinics[clinicId].splice(timingIndex, 1);
+    setSchedule(updatedSchedule);
+  };
+  console.log(schedule);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
+      children: "Doctor Schedule"
+    }), weekDays.map(function (day, dayIndex) {
+      var _schedule$dayIndex, _schedule$dayIndex2;
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        style: {
+          marginBottom: '20px'
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(antd__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          checked: ((_schedule$dayIndex = schedule[dayIndex]) === null || _schedule$dayIndex === void 0 ? void 0 : _schedule$dayIndex.available) || false,
+          onChange: function onChange() {
+            return toggleAvailability(dayIndex);
+          },
+          children: day
+        }), ((_schedule$dayIndex2 = schedule[dayIndex]) === null || _schedule$dayIndex2 === void 0 ? void 0 : _schedule$dayIndex2.available) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          style: {
+            marginLeft: '20px'
+          },
+          children: clinics.map(function (clinic) {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              style: {
+                marginBottom: '10px'
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("strong", {
+                children: clinic.name
+              }), (schedule[dayIndex].clinics[clinic.id] || []).map(function (timing, timingIndex) {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                  align: "baseline",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(antd__WEBPACK_IMPORTED_MODULE_4__["default"], {
+                    placeholder: "Enter timing (e.g., 4:00 PM)",
+                    value: timing,
+                    onChange: function onChange(e) {
+                      return updateTiming(dayIndex, clinic.id, timingIndex, e.target.value);
+                    },
+                    name: "schedule[".concat(dayIndex, "][clinics][").concat(clinic.id, "][").concat(timingIndex, "]")
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(antd__WEBPACK_IMPORTED_MODULE_5__["default"], {
+                    type: "danger",
+                    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_ant_design_icons__WEBPACK_IMPORTED_MODULE_6__["default"], {}),
+                    onClick: function onClick() {
+                      return removeTiming(dayIndex, clinic.id, timingIndex);
+                    }
+                  })]
+                }, timingIndex);
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(antd__WEBPACK_IMPORTED_MODULE_5__["default"], {
+                type: "dashed",
+                onClick: function onClick() {
+                  return addTiming(dayIndex, clinic.id);
+                },
+                icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_ant_design_icons__WEBPACK_IMPORTED_MODULE_7__["default"], {}),
+                children: "Add Timing"
+              })]
+            }, clinic.id);
+          })
+        })]
+      }, dayIndex);
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DoctorSchedule);
 
 /***/ }),
 
@@ -24271,6 +25061,116 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
+
+/***/ }),
+
+/***/ "./node_modules/rc-checkbox/es/index.js":
+/*!**********************************************!*\
+  !*** ./node_modules/rc-checkbox/es/index.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Checkbox: () => (/* binding */ Checkbox),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectSpread2 */ "./node_modules/@babel/runtime/helpers/esm/objectSpread2.js");
+/* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var _babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var rc_util_es_hooks_useMergedState__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rc-util/es/hooks/useMergedState */ "./node_modules/rc-util/es/hooks/useMergedState.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
+
+
+
+
+
+var _excluded = ["prefixCls", "className", "style", "checked", "disabled", "defaultChecked", "type", "title", "onChange"];
+
+
+
+
+var Checkbox = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_7__.forwardRef)(function (props, ref) {
+  var _props$prefixCls = props.prefixCls,
+    prefixCls = _props$prefixCls === void 0 ? 'rc-checkbox' : _props$prefixCls,
+    className = props.className,
+    style = props.style,
+    checked = props.checked,
+    disabled = props.disabled,
+    _props$defaultChecked = props.defaultChecked,
+    defaultChecked = _props$defaultChecked === void 0 ? false : _props$defaultChecked,
+    _props$type = props.type,
+    type = _props$type === void 0 ? 'checkbox' : _props$type,
+    title = props.title,
+    onChange = props.onChange,
+    inputProps = (0,_babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_4__["default"])(props, _excluded);
+  var inputRef = (0,react__WEBPACK_IMPORTED_MODULE_7__.useRef)(null);
+  var holderRef = (0,react__WEBPACK_IMPORTED_MODULE_7__.useRef)(null);
+  var _useMergedState = (0,rc_util_es_hooks_useMergedState__WEBPACK_IMPORTED_MODULE_6__["default"])(defaultChecked, {
+      value: checked
+    }),
+    _useMergedState2 = (0,_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_3__["default"])(_useMergedState, 2),
+    rawValue = _useMergedState2[0],
+    setRawValue = _useMergedState2[1];
+  (0,react__WEBPACK_IMPORTED_MODULE_7__.useImperativeHandle)(ref, function () {
+    return {
+      focus: function focus(options) {
+        var _inputRef$current;
+        (_inputRef$current = inputRef.current) === null || _inputRef$current === void 0 || _inputRef$current.focus(options);
+      },
+      blur: function blur() {
+        var _inputRef$current2;
+        (_inputRef$current2 = inputRef.current) === null || _inputRef$current2 === void 0 || _inputRef$current2.blur();
+      },
+      input: inputRef.current,
+      nativeElement: holderRef.current
+    };
+  });
+  var classString = classnames__WEBPACK_IMPORTED_MODULE_5___default()(prefixCls, className, (0,_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])((0,_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])({}, "".concat(prefixCls, "-checked"), rawValue), "".concat(prefixCls, "-disabled"), disabled));
+  var handleChange = function handleChange(e) {
+    if (disabled) {
+      return;
+    }
+    if (!('checked' in props)) {
+      setRawValue(e.target.checked);
+    }
+    onChange === null || onChange === void 0 || onChange({
+      target: (0,_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_1__["default"])((0,_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_1__["default"])({}, props), {}, {
+        type: type,
+        checked: e.target.checked
+      }),
+      stopPropagation: function stopPropagation() {
+        e.stopPropagation();
+      },
+      preventDefault: function preventDefault() {
+        e.preventDefault();
+      },
+      nativeEvent: e.nativeEvent
+    });
+  };
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7__.createElement("span", {
+    className: classString,
+    title: title,
+    style: style,
+    ref: holderRef
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7__.createElement("input", (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, inputProps, {
+    className: "".concat(prefixCls, "-input"),
+    ref: inputRef,
+    onChange: handleChange,
+    disabled: disabled,
+    checked: !!rawValue,
+    type: type
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7__.createElement("span", {
+    className: "".concat(prefixCls, "-inner")
+  }));
+});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Checkbox);
 
 /***/ }),
 

@@ -2,11 +2,14 @@ import React, {useState} from 'react';
 import TextInputField from "./TextInputField";
 import {Form} from "antd";
 import RepeaterField from "./RepeaterField";
+import DoctorSchedule from "./DoctorSchedule";
 
 const App = () => {
     const [simpleFieldOne, setSimpleFieldOne] = useState(pmwrParams.metaFields.simple_field_one || '');
     const [simpleFieldTwo, setSimpleFieldTwo] = useState(pmwrParams.metaFields.simple_field_two || '');
     const [repeaterFields, setRepeaterFields] = useState(pmwrParams.metaFields.repeater_fields || []);
+    const [schedule, setSchedule] = useState(pmwrParams.metaFields.schedule || []);
+    const clinics = pmwrParams.clinics || [];
     // Add a new repeater row
     const addField = () => {
         setRepeaterFields([...repeaterFields, { field_one: '', field_two: '' }]);
@@ -25,7 +28,7 @@ const App = () => {
         updatedFields[index][key] = value;
         setRepeaterFields(updatedFields);
     };
-    console.log(pmwrParams)
+
     return (
         <>
             <TextInputField
@@ -49,7 +52,11 @@ const App = () => {
                 onUpdate={updateField}
                 name="repeater_data"
             />
-
+            <DoctorSchedule
+                schedule={schedule}
+                setSchedule={setSchedule}
+                clinics={clinics}
+            />
         </>
     );
 };

@@ -94,6 +94,11 @@ class AssetsControllers {
             $meta_fields = get_post_meta($post_id);
             $repeater_field= get_post_meta($post_id, '_repeater_field', true);
             $repeater_field = maybe_unserialize($repeater_field);
+            $schedule = get_post_meta($post_id, '_doctor_schedule', true);
+            $clinics = [
+                ['id' => 1, 'name' => 'Clinic 1'],
+                ['id' => 2, 'name' => 'Clinic 2'],
+            ];
             wp_localize_script(
                 'pmwr-admin-js',
                 'pmwrParams',
@@ -107,8 +112,10 @@ class AssetsControllers {
                     'metaFields' => [
                         'simple_field_one' => isset($meta_fields['_simple_field_one']) ? $meta_fields['_simple_field_one'][0] : '',
                         'simple_field_two' => isset($meta_fields['_simple_field_two']) ? $meta_fields['_simple_field_two'][0] : '',
-                        'repeater_fields' =>  $repeater_field
+                        'repeater_fields' =>  $repeater_field,
+                        'schedule'         => $schedule ?: [],
                     ],
+                    'clinics'    => $clinics,
                 ]
             );
         }
