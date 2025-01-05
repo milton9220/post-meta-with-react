@@ -52,15 +52,15 @@ class AddPostMeta{
         }
 
         // Sanitize and save simple fields
-        if (isset($_POST['simple_field_one'])) {
+        if (!empty($_POST['simple_field_one'])) {
             update_post_meta($post_id, '_simple_field_one', sanitize_text_field($_POST['simple_field_one']));
         }
 
-        if (isset($_POST['simple_field_two'])) {
+        if (!empty($_POST['simple_field_two'])) {
             update_post_meta($post_id, '_simple_field_two', sanitize_text_field($_POST['simple_field_two']));
         }
         // Sanitize and save repeater data
-        if (isset($_POST['repeater_data']) && is_array($_POST['repeater_data'])) {
+        if (!empty($_POST['repeater_data']) && is_array($_POST['repeater_data'])) {
             $repeater_data = $_POST['repeater_data']; // Directly use the array from $_POST
             $sanitized_data = array_map(function ($item) {
                 return [
@@ -72,47 +72,45 @@ class AddPostMeta{
             // Save the sanitized data as serialized in post meta
             update_post_meta($post_id, '_repeater_field', $sanitized_data);
         }
-        // Handle scheduling
-        $raw_schedule = $_POST['schedule'] ?? [];
-        if (!empty($raw_schedule)) {
-            $weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
-            // Process and sanitize the schedule
-            $processed_schedule = [];
-            foreach ($raw_schedule as $day_index => $day_data) {
-                // Ensure day index is valid
-                if (!isset($weekdays[$day_index])) {
-                    continue;
-                }
+	    // Handle scheduling
+	    if (!empty($_POST['schedule'])) {
+		    $raw_schedule = json_decode(stripslashes($_POST['schedule']), true);
 
-                $day = $weekdays[$day_index]; // Map to the correct weekday name
+		    $processed_schedule = [];
+		    foreach ($raw_schedule as $day_data) {
+			    if (empty($day_data['available'])) {
+				    continue;
+			    }
 
-                $sanitized_clinics = [];
-                if (isset($day_data['clinics']) && is_array($day_data['clinics'])) {
-                    foreach ($day_data['clinics'] as $clinic_id => $timings) {
-                        $sanitized_clinics[(int) $clinic_id] = array_map('sanitize_text_field', $timings);
-                    }
-                }
+			    $sanitized_clinics = [];
+			    foreach ($day_data['clinics'] as $clinic) {
+				    $sanitized_timings = array_map(function ($timing) {
+					    return [
+						    'time' => sanitize_text_field($timing['time']),
+						    'is_bookable' => filter_var($timing['is_bookable'], FILTER_VALIDATE_BOOLEAN),
+					    ];
+				    }, $clinic['timings']);
+				    $sanitized_clinics[] = [
+					    'id' => sanitize_text_field($clinic['id']),
+					    'name' => sanitize_text_field($clinic['name']),
+					    'timings' => $sanitized_timings,
+				    ];
+			    }
 
-                // Only add days that are available with valid clinic data
-                if (!empty($sanitized_clinics)) {
-                    $processed_schedule[] = [
-                        'available' => true,
-                        'day'       => $day,
-                        'clinics'   => $sanitized_clinics,
-                    ];
-                }
-            }
-
-            error_log(print_r($processed_schedule, true) . "\n\n", 3, __DIR__ . '/log.txt');
-
-            // Save the sanitized schedule to post meta only if it has valid data
-            if (!empty($processed_schedule)) {
-                update_post_meta($post_id, '_doctor_schedule', $processed_schedule);
-            } else {
-                delete_post_meta($post_id, '_doctor_schedule'); // Remove old data if no valid schedule
-            }
-        }
+			    $processed_schedule[] = [
+				    'available' => true,
+				    'day' => sanitize_text_field($day_data['day']),
+				    'clinics' => $sanitized_clinics,
+			    ];
+		    }
+			error_log( print_r( $processed_schedule , true ) . "\n\n" , 3, __DIR__ . '/log.txt' );
+		    if (!empty($processed_schedule)) {
+			    update_post_meta($post_id, '_doctor_schedule', $processed_schedule);
+		    } else {
+			    delete_post_meta($post_id, '_doctor_schedule'); // Remove old data if no valid schedule
+		    }
+	    }
 
     }
 

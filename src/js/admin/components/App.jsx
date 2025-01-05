@@ -52,11 +52,7 @@ const App = () => {
                 onUpdate={updateField}
                 name="repeater_data"
             />
-            <DoctorSchedule
-                schedule={schedule}
-                setSchedule={setSchedule}
-                clinics={clinics}
-            />
+            <DoctorSchedule schedule={schedule} setSchedule={setSchedule} clinics={clinics} />
         </>
     );
 };
